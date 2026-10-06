@@ -29,7 +29,7 @@ namespace WebAgenda.Repositorios
                    new SqlConnection(_cadenaConexion))
             {
                 using (SqlCommand comando =
-                       new SqlCommand("SP_CREAR_CONTACTO", conexion))
+                       new SqlCommand("sp_CrearContacto", conexion))
                 {
                     comando.CommandType = CommandType.StoredProcedure;
                     comando.Parameters.Add("@NOMBRE", SqlDbType.VarChar, 100).Value = contacto.NOMBRE;
@@ -57,7 +57,7 @@ namespace WebAgenda.Repositorios
             List<Contactos> lista = new List<Contactos>();
             using (SqlConnection conexion = new SqlConnection(_cadenaConexion))
             {
-                using (SqlCommand comando = new SqlCommand("SP_CONSULTAR_CONTACTOS", conexion))
+                using (SqlCommand comando = new SqlCommand("sp_ConsultarContactos", conexion))
                 {
                     comando.CommandType = CommandType.StoredProcedure;
                     conexion.Open();
@@ -97,7 +97,7 @@ namespace WebAgenda.Repositorios
             List<Contactos> lista = new List<Contactos>();
             using (SqlConnection conexion = new SqlConnection(_cadenaConexion))
             {
-                using (SqlCommand comando = new SqlCommand("SP_CONSULTAR_CONTACTO_POR_TELEFONO", conexion))
+                using (SqlCommand comando = new SqlCommand("sp_ConsultarContactoPorTelefono", conexion))
                 {
                     comando.CommandType = CommandType.StoredProcedure;
                     comando.Parameters.Add("@TELEFONO", SqlDbType.VarChar, 30).Value = telefono;
@@ -139,7 +139,7 @@ namespace WebAgenda.Repositorios
             List<Contactos> lista = new List<Contactos>();
             using (SqlConnection conexion = new SqlConnection(_cadenaConexion))
             {
-                using (SqlCommand comando = new SqlCommand("SP_CONSULTAR_CONTACTO_POR_CORREO", conexion))
+                using (SqlCommand comando = new SqlCommand("sp_ConsultarContactoPorCorreo", conexion))
                 {
                     comando.CommandType = CommandType.StoredProcedure;
                     comando.Parameters.Add("@CORREO", SqlDbType.VarChar, 150).Value = correo;
@@ -180,7 +180,7 @@ namespace WebAgenda.Repositorios
         {
             using (SqlConnection conexion = new SqlConnection(_cadenaConexion))
             {
-                using (SqlCommand comando = new SqlCommand("SP_ACTUALIZAR_CONTACTO",
+                using (SqlCommand comando = new SqlCommand("sp_ActualizarContacto",
                            conexion))
                 {
                     comando.CommandType = CommandType.StoredProcedure;
@@ -207,7 +207,7 @@ namespace WebAgenda.Repositorios
         {
             using (SqlConnection conexion = new SqlConnection(_cadenaConexion))
             {
-                using (SqlCommand comando = new SqlCommand("SP_ELIMINAR_CONTACTO", conexion))
+                using (SqlCommand comando = new SqlCommand("sp_EliminarContacto", conexion))
                 {
                     comando.CommandType = CommandType.StoredProcedure;
                     comando.Parameters.Add("@ID_CONTACTO", SqlDbType.Int).Value = idContacto;

@@ -1,0 +1,329 @@
+﻿:root {
+    --dorado: #E7A84E;
+    --naranja: #D96C2C;
+    --verde: #3E8E7E;
+    --azul-oscuro: #274C56;
+    --crema: #F6E2B3;
+    --blanco: #FFFFFF;
+    --negro: #000000;
+    --gris-fondo: #f7f5f1;
+    --gris-borde: #d8d3ca;
+    --gris-texto: #5f6868;
+}
+
+/* Configuración general */
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    background-color: var(--gris-fondo);
+    color: var(--azul-oscuro);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Contenedor principal */
+.pagina {
+    width: 95%;
+    max-width: 1350px;
+    margin: 30px auto;
+}
+
+/* Encabezado */
+.encabezado {
+    margin-bottom: 24px;
+    padding: 24px 28px;
+    border-radius: 12px;
+    background-color: var(--azul-oscuro);
+    box-shadow: 0 4px 12px rgba(39, 76, 86, 0.18);
+}
+
+    .encabezado h1 {
+        margin: 0;
+        color: var(--blanco);
+        font-size: 32px;
+        font-weight: bold;
+    }
+
+    .encabezado p {
+        margin: 8px 0 0;
+        color: var(--crema);
+        font-size: 15px;
+    }
+
+/* Mensajes */
+.mensaje {
+    display: block;
+    margin-bottom: 18px;
+    padding: 13px 16px;
+    border-left: 5px solid var(--verde);
+    border-radius: 7px;
+    background-color: var(--crema);
+    color: var(--azul-oscuro);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Distribución principal */
+.contenedor {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+/* Tarjetas */
+.tarjeta {
+    padding: 24px;
+    border: 1px solid rgba(39, 76, 86, 0.12);
+    border-radius: 12px;
+    background-color: var(--blanco);
+    box-shadow: 0 4px 15px rgba(39, 76, 86, 0.10);
+}
+
+    .tarjeta h2 {
+        margin: 0 0 20px;
+        color: var(--azul-oscuro);
+        font-size: 21px;
+    }
+
+.titulo-formulario {
+    display: block;
+    margin-bottom: 22px;
+    color: var(--azul-oscuro);
+    font-size: 21px;
+    font-weight: bold;
+}
+
+/* Campos del formulario */
+.grupo {
+    margin-bottom: 16px;
+}
+
+    .grupo label {
+        display: block;
+        margin-bottom: 6px;
+        color: var(--azul-oscuro);
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+.entrada,
+.selector {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid var(--gris-borde);
+    border-radius: 7px;
+    background-color: var(--blanco);
+    color: var(--azul-oscuro);
+    font-size: 14px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+    .entrada::placeholder {
+        color: var(--gris-texto);
+    }
+
+    .entrada:focus,
+    .selector:focus {
+        outline: none;
+        border-color: var(--verde);
+        box-shadow: 0 0 0 3px rgba(62, 142, 126, 0.20);
+    }
+
+.obligatorio {
+    color: var(--naranja);
+}
+
+.error {
+    display: block;
+    margin-top: 5px;
+    color: var(--naranja);
+    font-size: 12px;
+}
+
+/* Botones */
+.botones {
+    display: flex;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.boton {
+    display: inline-block;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+    .boton:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.16);
+    }
+
+    .boton:active {
+        transform: translateY(0);
+    }
+
+/* Guardar y buscar */
+.boton-primario {
+    background-color: var(--verde);
+    color: var(--blanco);
+}
+
+    .boton-primario:hover {
+        background-color: var(--azul-oscuro);
+    }
+
+/* Limpiar */
+.boton-secundario {
+    background-color: var(--crema);
+    color: var(--azul-oscuro);
+}
+
+    .boton-secundario:hover {
+        background-color: var(--dorado);
+        color: var(--azul-oscuro);
+    }
+
+/* Editar */
+.boton-editar {
+    background-color: var(--dorado);
+    color: var(--azul-oscuro);
+}
+
+    .boton-editar:hover {
+        background-color: var(--naranja);
+        color: var(--blanco);
+    }
+
+/* Eliminar */
+.boton-peligro {
+    background-color: var(--naranja);
+    color: var(--blanco);
+}
+
+    .boton-peligro:hover {
+        background-color: var(--azul-oscuro);
+    }
+
+/* Área de búsqueda */
+.busqueda {
+    display: grid;
+    grid-template-columns: 190px 1fr auto;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* Tabla */
+.tabla-contenedor {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 8px;
+}
+
+.tabla {
+    width: 100%;
+    min-width: 900px;
+    border-collapse: collapse;
+    overflow: hidden;
+}
+
+    .tabla th {
+        padding: 13px 10px;
+        background-color: var(--azul-oscuro);
+        color: var(--blanco);
+        font-size: 13px;
+        font-weight: bold;
+        text-align: left;
+        white-space: nowrap;
+    }
+
+    .tabla td {
+        padding: 11px 10px;
+        border-bottom: 1px solid var(--gris-borde);
+        color: var(--azul-oscuro);
+        font-size: 13px;
+        vertical-align: middle;
+    }
+
+    .tabla tr:nth-child(even) {
+        background-color: #fcf8ee;
+    }
+
+    .tabla tr:hover {
+        background-color: var(--crema);
+    }
+
+.acciones {
+    display: flex;
+    gap: 5px;
+    white-space: nowrap;
+}
+
+/* Texto cuando no hay registros */
+.tabla .empty {
+    padding: 22px;
+    color: var(--gris-texto);
+    text-align: center;
+}
+
+/* Diseño adaptable para tabletas */
+@media screen and (max-width: 950px) {
+    .contenedor {
+        grid-template-columns: 1fr;
+    }
+
+    .busqueda {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Diseño adaptable para celulares */
+@media screen and (max-width: 600px) {
+    .pagina {
+        width: 92%;
+        margin: 20px auto;
+    }
+
+    .encabezado {
+        padding: 20px;
+    }
+
+        .encabezado h1 {
+            font-size: 25px;
+        }
+
+    .tarjeta {
+        padding: 18px;
+    }
+
+    .botones {
+        flex-direction: column;
+    }
+
+        .botones .boton {
+            width: 100%;
+            text-align: center;
+        }
+
+    .acciones {
+        flex-direction: column;
+    }
+
+        .acciones .boton {
+            width: 100%;
+            text-align: center;
+        }
+}

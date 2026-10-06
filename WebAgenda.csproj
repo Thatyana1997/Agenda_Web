@@ -69,6 +69,8 @@
   <ItemGroup>
     <Content Include="BD\BD.sql" />
     <Content Include="Global.asax" />
+    <Content Include="Vistas\Estilos.css" />
+    <Content Include="Vistas\Mantenimiento.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -78,6 +80,13 @@
     <Compile Include="Modelos\Contactos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorios\ContactoRepositorio.cs" />
+    <Compile Include="Vistas\Mantenimiento.aspx.cs">
+      <DependentUpon>Mantenimiento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Mantenimiento.aspx.designer.cs">
+      <DependentUpon>Mantenimiento.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -90,7 +99,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Vistas\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
