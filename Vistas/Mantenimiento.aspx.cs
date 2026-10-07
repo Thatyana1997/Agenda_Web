@@ -23,14 +23,35 @@ namespace WebAgenda.Vistas
         // Este método se ejecuta cada vez que se carga la página
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            // IsPostBack permite saber si la página se está cargando
+            // por primera vez o como resultado de una acción del usuario
+            if (!IsPostBack)
+            {
+                // Carga la lista de contactos solamente la primera vez
+                CargarContactos();
+            }
         }
 
         // Obtiene todos los contactos desde el repositorio
         // y los muestra en el GridView
         private void CargarContactos()
         {
-
+            try
+            {
+                // Consulta todos los contactos almacenados
+                List<Contactos> contactos =
+                    _repositorio.ConsultarTodos();
+                // Asigna la lista como origen de datos del GridView
+                gvContactos.DataSource = contactos;
+                // Enlaza los datos con el control visual
+                gvContactos.DataBind();
+            }
+            catch (Exception ex)
+            {
+                // Si ocurre un error, se muestra un mensaje al usuario
+                MostrarMensaje(
+                    "Error al cargar los contactos: " + ex.Message);
+            }
         }
 
         // Evento ejecutado cuando el usuario presiona el botón Guardar
