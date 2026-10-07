@@ -29,7 +29,7 @@
     <meta charset="utf-8" />
 
     <%-- Título que se mostrará en la pestaña del navegador --%>
-    <title>Mantenimiento de Contactos</title>
+    <title>Mantenimiento de Contactos 2026</title>
 
     <%-- Enlaza el archivo CSS que contiene los estilos visuales        de la página.--%>
     <link

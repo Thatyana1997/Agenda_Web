@@ -36,8 +36,7 @@ namespace WebAgenda.Vistas
         // Evento ejecutado cuando el usuario presiona el botón Guardar
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-
-
+             
         }
 
         // Evento ejecutado cuando el usuario presiona el botón Nuevo
